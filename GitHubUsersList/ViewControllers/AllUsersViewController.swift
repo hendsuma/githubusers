@@ -10,6 +10,7 @@ import UIKit
 import Moya
 import SDWebImage
 import PKHUD
+import ReachabilitySwift
 
 class AllUsersViewController: UIViewController {
 	
@@ -24,19 +25,20 @@ class AllUsersViewController: UIViewController {
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		let spinner = UIActivityIndicatorView(activityIndicatorStyle: .gray)
-		spinner.startAnimating()
-		spinner.frame = CGRect(x: 0, y: 0, width: self.allUsersTableView.frame.width, height: 44)
-		self.allUsersTableView.tableFooterView = spinner;
+		setupReachability()
 		
 		// Do any additional setup after loading the view, typically from a nib.
 		if(self.allUsers.count <= 0){
 			getUsers()
 		}
 		else{
-			
+			let spinner = UIActivityIndicatorView(activityIndicatorStyle: .gray)
+			spinner.startAnimating()
+			spinner.frame = CGRect(x: 0, y: 0, width: self.allUsersTableView.frame.width, height: 44)
+			self.allUsersTableView.tableFooterView = spinner;
 			
 		}
+		
 	}
 	
 	override func didReceiveMemoryWarning() {
@@ -64,23 +66,26 @@ class AllUsersViewController: UIViewController {
 					
 					
 				}
-			case .failure(let error): break
+			case .failure(let error): HUD.hide()
+				break
 				// show error
 			}
 		}
 		
 	}
-	func getUsersSince(since : Int){
+	func getUsersSince(since : String){
 		let provider = MoyaProvider<UserService>()
 		provider.request(.getUsersSince(since: since)) { (result) in
 			print(result)
 			switch result {
 			case .success(let response):
-				let responseString = String(data: response.data, encoding: String.Encoding.utf8) as String!
-				let userArray = [Users](json:responseString)
-				Users.saveDownloadedUsers(newData: userArray)
-				self.allUsers = Users.getDownloadedUsers()
-				self.allUsersTableView.reloadData()
+				if(response.statusCode == 200){
+					let responseString = String(data: response.data, encoding: String.Encoding.utf8) as String!
+					let userArray = [Users](json:responseString)
+					Users.saveDownloadedUsers(newData: userArray)
+					self.allUsers = Users.getDownloadedUsers()
+					self.allUsersTableView.reloadData()
+				}
 			case .failure(let error): break
 				// show error
 			}
@@ -95,7 +100,33 @@ class AllUsersViewController: UIViewController {
 			nextVC.selectedUser = selectedUser
 		}
 	}
-	
+	func setupReachability() {
+		let reachable = try! DefaultReachabilityService.init()
+		let user : Users = Users()
+		reachable.reachability.subscribe { event in
+			switch (event) {
+			case let .next(status):
+				print("network is \(status)")
+				if !reachable._reachability.isReachable {
+					HUD.hide()
+					let alertController = UIAlertController(title: NSLocalizedString("Error", comment: "Error"), message: NSLocalizedString(reachable._reachability.currentReachabilityStatus.description, comment: ""), preferredStyle: UIAlertControllerStyle.alert)
+					let action = UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil)
+					alertController.addAction(action)
+					if !(self.navigationController!.visibleViewController!.isKind(of: UIAlertController.self)) {
+						OperationQueue.main.addOperation {
+							self.navigationController?.present(alertController, animated: true, completion: nil)
+						}
+					}
+				}
+			default:
+				break
+			}
+			}.addDisposableTo(user.disposeBag)
+		
+		
+		
+	}
+
 }
 
 extension AllUsersViewController : UITableViewDelegate,UITableViewDataSource{
@@ -122,6 +153,10 @@ extension AllUsersViewController : UITableViewDelegate,UITableViewDataSource{
 			tablecell.favoriteButton.isSelected = true
 			
 		}
+		else{
+			tablecell.favoriteButton.isSelected = false
+			
+		}
 		
 		tablecell.avatarImageView.sd_setImage(with: URL(string:singleUser.avatar_url), placeholderImage: UIImage(named: "PlaceholderImage"))
 		
@@ -146,7 +181,7 @@ extension AllUsersViewController : UITableViewDelegate,UITableViewDataSource{
 		// At the bottom...
 		if (indexPath.row == self.allUsers.count - 1) {
 			let lastUserID = allUsers[allUsers.count-1]
-			self.getUsersSince(since: lastUserID.id)
+			self.getUsersSince(since: String(lastUserID.id))
 		}
 	}
 }

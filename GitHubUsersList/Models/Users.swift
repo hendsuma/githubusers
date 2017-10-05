@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import RxSwift
+import Moya
 import EVReflection
 import SwiftyUserDefaults
 
@@ -18,6 +20,7 @@ class Users : EVObject{
 	var type 		: String = ""
 	var site_admin	: Bool   = false
 	var isFavorite	: Bool	 = false
+	var disposeBag  : DisposeBag! = DisposeBag()
 	
 	static func getDownloadedUsers() -> [Users]{
 		let result : [Users] = [Users](json: Defaults[.downloadedUsers])

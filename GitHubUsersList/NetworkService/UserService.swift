@@ -11,7 +11,7 @@ import Moya
 
 enum UserService {
 	case getUsers()
-	case getUsersSince(since:Int)
+	case getUsersSince(since:String)
 	
 }
 
@@ -33,7 +33,7 @@ extension UserService : TargetType {
 		case .getUsers():
 			return "users"
 		case .getUsersSince(let since):
-			return "users/?since=\(since)"
+			return "users"
 		}
 	}
 	var method: Moya.Method {
@@ -41,9 +41,16 @@ extension UserService : TargetType {
 		
 	}
 	var parameters: [String: Any]? {
+		switch self {
+			case .getUsersSince(let since):
+				return ["since":since]
+		default:
 			return nil
-		
+		}
 	}
 	var sampleData: Data { return Data() }
 	
+	var parameterEncoding : ParameterEncoding{
+		return URLEncoding.queryString
+	}
 }

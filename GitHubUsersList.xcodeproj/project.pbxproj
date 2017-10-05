@@ -20,6 +20,7 @@
 		463A234F1F85FED500C8A260 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 463A234E1F85FED500C8A260 /* UserService.swift */; };
 		463A23511F86165300C8A260 /* UserGitHubDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 463A23501F86165300C8A260 /* UserGitHubDetailsViewController.swift */; };
 		463A23541F861C8700C8A260 /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 463A23531F861C8700C8A260 /* UserTableViewCell.swift */; };
+		463A23571F862E7B00C8A260 /* DefaultReachabilityService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 463A23561F862E7B00C8A260 /* DefaultReachabilityService.swift */; };
 		6951BAEF8A3298BB108DC5F9 /* Pods_GitHubUsersListTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CC442E5B6A321B7D3DB00A8 /* Pods_GitHubUsersListTests.framework */; };
 		BDE0A19483EA6665B5C9CA0B /* Pods_GitHubUsersList.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 365C07D33DE6E618FB2CA553 /* Pods_GitHubUsersList.framework */; };
 		CFA5E2FC89FD7CCEBD438A95 /* Pods_GitHubUsersListUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71D3FFF144CC45A68BED529A /* Pods_GitHubUsersListUITests.framework */; };
@@ -64,6 +65,7 @@
 		463A234E1F85FED500C8A260 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		463A23501F86165300C8A260 /* UserGitHubDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserGitHubDetailsViewController.swift; sourceTree = "<group>"; };
 		463A23531F861C8700C8A260 /* UserTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTableViewCell.swift; sourceTree = "<group>"; };
+		463A23561F862E7B00C8A260 /* DefaultReachabilityService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultReachabilityService.swift; sourceTree = "<group>"; };
 		4C9501D1A180F9B456DB0A13 /* Pods-GitHubUsersList.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitHubUsersList.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GitHubUsersList/Pods-GitHubUsersList.debug.xcconfig"; sourceTree = "<group>"; };
 		4F2CFE9FADDA8E396B1B1120 /* Pods-GitHubUsersListUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitHubUsersListUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-GitHubUsersListUITests/Pods-GitHubUsersListUITests.release.xcconfig"; sourceTree = "<group>"; };
 		70DB1B59CB0E2EBA761ADBE8 /* Pods-GitHubUsersListTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitHubUsersListTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GitHubUsersListTests/Pods-GitHubUsersListTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -126,6 +128,7 @@
 		463A23161F85E8CC00C8A260 /* GitHubUsersList */ = {
 			isa = PBXGroup;
 			children = (
+				463A23551F862E6200C8A260 /* Helpers */,
 				463A23521F861C7800C8A260 /* Views */,
 				463A234D1F85FEB200C8A260 /* NetworkService */,
 				463A234A1F85EBCE00C8A260 /* Models */,
@@ -190,6 +193,14 @@
 				463A23531F861C8700C8A260 /* UserTableViewCell.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		463A23551F862E6200C8A260 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				463A23561F862E7B00C8A260 /* DefaultReachabilityService.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 		4666308947FA4FDB82487C44 /* Frameworks */ = {
@@ -499,6 +510,7 @@
 				463A23511F86165300C8A260 /* UserGitHubDetailsViewController.swift in Sources */,
 				463A231A1F85E8CC00C8A260 /* ViewController.swift in Sources */,
 				463A23471F85EB9C00C8A260 /* AllUsersViewController.swift in Sources */,
+				463A23571F862E7B00C8A260 /* DefaultReachabilityService.swift in Sources */,
 				463A234F1F85FED500C8A260 /* UserService.swift in Sources */,
 				463A23541F861C8700C8A260 /* UserTableViewCell.swift in Sources */,
 				463A234C1F85ED4600C8A260 /* Users.swift in Sources */,
