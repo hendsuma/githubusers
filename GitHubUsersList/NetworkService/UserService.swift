@@ -33,7 +33,7 @@ extension UserService : TargetType {
 		case .getUsers():
 			return "users"
 		case .getUsersSince(let since):
-			return "users"
+			return "users?since=\(since)"
 		}
 	}
 	var method: Moya.Method {
