@@ -1,0 +1,55 @@
+PODS:
+  - Alamofire (4.5.1)
+  - EVReflection/Alamofire (4.19.1):
+    - Alamofire
+    - EVReflection/Core
+  - EVReflection/Core (4.19.1)
+  - EVReflection/Moya (4.19.1):
+    - EVReflection/Alamofire
+    - Moya
+  - EVReflection/MoyaRxSwift (4.19.1):
+    - EVReflection/Moya
+    - Moya/RxSwift
+  - Moya (9.0.0):
+    - Moya/Core (= 9.0.0)
+  - Moya/Core (9.0.0):
+    - Alamofire (~> 4.1)
+    - Result (~> 3.0)
+  - Moya/RxSwift (9.0.0):
+    - Moya/Core
+    - RxSwift (~> 3.3)
+  - PKHUD (5.0.0)
+  - ReachabilitySwift (3)
+  - Result (3.2.4)
+  - RxCocoa (3.6.1):
+    - RxSwift (~> 3.6)
+  - RxSwift (3.6.1)
+  - SDWebImage (4.1.0):
+    - SDWebImage/Core (= 4.1.0)
+  - SDWebImage/Core (4.1.0)
+  - SwiftyUserDefaults (3.0.0)
+
+DEPENDENCIES:
+  - EVReflection/MoyaRxSwift
+  - Moya (~> 9.0)
+  - PKHUD (~> 5.0)
+  - ReachabilitySwift (~> 3)
+  - RxCocoa
+  - SDWebImage
+  - SwiftyUserDefaults
+
+SPEC CHECKSUMS:
+  Alamofire: 2d95912bf4c34f164fdfc335872e8c312acaea4a
+  EVReflection: 93817c1981460105cd3b44c67ea87a5b6f5bb98e
+  Moya: cf5e6ee93af526532f92614004b8ad2ea60fd845
+  PKHUD: 3c001512c6e002091184197a8de7a20420786e3b
+  ReachabilitySwift: f5b9bb30a0777fac8f09ce8b067e32faeb29bb64
+  Result: d2d07204ce72856f1fd9130bbe42c35a7b0fea10
+  RxCocoa: 84a08739ab186248c7f31ce4ee92d6f8a947d690
+  RxSwift: f9de85ea20cd2f7716ee5409fc13523dc638e4e4
+  SDWebImage: 0e435c14e402a6730315a0fb79f95e68654d55a4
+  SwiftyUserDefaults: 0f1d45fc3aafb9064dac661e367f8f83fe21a4b4
+
+PODFILE CHECKSUM: b56d558e0051a78d20de4c7b1bc228bc1f07b158
+
+COCOAPODS: 1.2.0

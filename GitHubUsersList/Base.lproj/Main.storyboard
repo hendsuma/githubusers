@@ -1,0 +1,352 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="F6r-yc-X08">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="yx0-Or-Dcf">
+            <objects>
+                <navigationController id="fPF-Pl-SNi" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" systemItem="favorites" id="RFR-HU-t2e"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="DMZ-mw-iA8">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="aTy-8h-z9L" kind="relationship" relationship="rootViewController" id="7LQ-yG-Bwd"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iGy-c7-gMO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="833" y="388"/>
+        </scene>
+        <!--Favorite Users-->
+        <scene sceneID="sOT-Fu-jeR">
+            <objects>
+                <viewController id="aTy-8h-z9L" customClass="FavoriteUsersViewController" customModule="GitHubUsersList" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="HAT-8K-bOY">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="eog-3J-19Y">
+                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="UserTableCell" rowHeight="112" id="hP6-8g-3Ms" customClass="UserTableViewCell" customModule="GitHubUsersList" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="112"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="hP6-8g-3Ms" id="FZI-hR-OST">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="111.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" tag="50" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="PlaceholderImage" translatesAutoresizingMaskIntoConstraints="NO" id="cSO-17-fdG">
+                                                    <rect key="frame" x="8" y="15" width="80" height="80"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="80" id="5oJ-8O-p6J"/>
+                                                        <constraint firstAttribute="width" constant="80" id="I6a-75-7B3"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" tag="51" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Github Login" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.69999998807907104" translatesAutoresizingMaskIntoConstraints="NO" id="yR2-Uy-raW">
+                                                    <rect key="frame" x="96" y="15" width="223" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="21" id="G2A-zv-ju6"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" tag="52" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Github Page URL" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.69999998807907104" translatesAutoresizingMaskIntoConstraints="NO" id="UAH-tg-30r">
+                                                    <rect key="frame" x="96" y="47.5" width="223" height="16"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" tag="53" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Account Type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.69999998807907104" translatesAutoresizingMaskIntoConstraints="NO" id="S4s-ei-wk0">
+                                                    <rect key="frame" x="96" y="74" width="190" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <button opaque="NO" tag="54" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="epS-06-yGF">
+                                                    <rect key="frame" x="327" y="35" width="40" height="40"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="40" id="TFY-0k-mXE"/>
+                                                        <constraint firstAttribute="width" constant="40" id="hSA-ie-bXb"/>
+                                                    </constraints>
+                                                    <state key="normal" image="FavoriteIconUnselected"/>
+                                                    <state key="selected" image="FavoriteIconSelected"/>
+                                                    <connections>
+                                                        <action selector="handleButtonPressWithSender:" destination="hP6-8g-3Ms" eventType="touchUpInside" id="mo7-Oc-y5z"/>
+                                                    </connections>
+                                                </button>
+                                                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" tag="55" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Site Admin" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="smy-FD-AuC">
+                                                    <rect key="frame" x="325.5" y="18" width="42.5" height="15"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="15" id="oGa-R3-wUT"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="8"/>
+                                                    <color key="textColor" red="0.2351422792" green="0.5" blue="0.18748499090000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="epS-06-yGF" firstAttribute="centerY" secondItem="FZI-hR-OST" secondAttribute="centerY" id="5Lg-PA-tGC"/>
+                                                <constraint firstItem="cSO-17-fdG" firstAttribute="leading" secondItem="FZI-hR-OST" secondAttribute="leadingMargin" id="5Vo-IX-XcC"/>
+                                                <constraint firstItem="epS-06-yGF" firstAttribute="leading" secondItem="yR2-Uy-raW" secondAttribute="trailing" constant="8" id="9AD-4f-VcW"/>
+                                                <constraint firstItem="UAH-tg-30r" firstAttribute="trailing" secondItem="yR2-Uy-raW" secondAttribute="trailing" id="At9-Lm-0fH"/>
+                                                <constraint firstItem="UAH-tg-30r" firstAttribute="leading" secondItem="yR2-Uy-raW" secondAttribute="leading" id="I6b-6J-Rpf"/>
+                                                <constraint firstItem="S4s-ei-wk0" firstAttribute="trailing" secondItem="UAH-tg-30r" secondAttribute="trailing" id="Tod-Dg-dwb"/>
+                                                <constraint firstItem="yR2-Uy-raW" firstAttribute="top" secondItem="cSO-17-fdG" secondAttribute="top" id="URA-wy-Svl"/>
+                                                <constraint firstItem="S4s-ei-wk0" firstAttribute="bottom" secondItem="cSO-17-fdG" secondAttribute="bottom" id="UsS-Fh-s02"/>
+                                                <constraint firstItem="smy-FD-AuC" firstAttribute="centerX" secondItem="epS-06-yGF" secondAttribute="centerX" id="aJp-9U-YhA"/>
+                                                <constraint firstItem="UAH-tg-30r" firstAttribute="centerY" secondItem="FZI-hR-OST" secondAttribute="centerY" id="bLV-Fg-Pes"/>
+                                                <constraint firstItem="epS-06-yGF" firstAttribute="trailing" secondItem="FZI-hR-OST" secondAttribute="trailingMargin" id="dJn-ep-ixY"/>
+                                                <constraint firstItem="cSO-17-fdG" firstAttribute="centerY" secondItem="FZI-hR-OST" secondAttribute="centerY" id="gKl-Ji-mdY"/>
+                                                <constraint firstItem="S4s-ei-wk0" firstAttribute="leading" secondItem="UAH-tg-30r" secondAttribute="leading" id="rDz-RY-29P"/>
+                                                <constraint firstItem="yR2-Uy-raW" firstAttribute="leading" secondItem="cSO-17-fdG" secondAttribute="trailing" constant="8" id="wnS-SX-rNg"/>
+                                                <constraint firstItem="smy-FD-AuC" firstAttribute="centerY" secondItem="yR2-Uy-raW" secondAttribute="centerY" id="zRj-Qz-rBN"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="accountTypeLabel" destination="S4s-ei-wk0" id="s0G-Dl-Y2j"/>
+                                            <outlet property="avatarImageView" destination="cSO-17-fdG" id="Qwe-NB-EJJ"/>
+                                            <outlet property="favoriteButton" destination="epS-06-yGF" id="0Zv-ZM-acM"/>
+                                            <outlet property="githubPageURLLabel" destination="UAH-tg-30r" id="2cH-dk-btH"/>
+                                            <outlet property="loginLabel" destination="yR2-Uy-raW" id="ba6-eF-HCp"/>
+                                            <outlet property="siteAdminLabel" destination="smy-FD-AuC" id="MPZ-5D-XgV"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="aTy-8h-z9L" id="cY5-mD-Eh3"/>
+                                    <outlet property="delegate" destination="aTy-8h-z9L" id="2fy-K6-Tte"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="eog-3J-19Y" firstAttribute="trailing" secondItem="eCE-V7-hxe" secondAttribute="trailing" id="8Zk-Uw-ZgO"/>
+                            <constraint firstItem="eog-3J-19Y" firstAttribute="top" secondItem="eCE-V7-hxe" secondAttribute="top" id="CsH-9l-Xqz"/>
+                            <constraint firstItem="eog-3J-19Y" firstAttribute="leading" secondItem="eCE-V7-hxe" secondAttribute="leading" id="XJF-q0-bHW"/>
+                            <constraint firstItem="eog-3J-19Y" firstAttribute="bottom" secondItem="eCE-V7-hxe" secondAttribute="bottom" id="iLr-rc-4Zy"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="eCE-V7-hxe"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Favorite Users" id="bIu-Ig-1dz"/>
+                    <connections>
+                        <outlet property="allFavoriteUsersTableView" destination="eog-3J-19Y" id="CS6-hb-Z8I"/>
+                        <segue destination="1bp-tE-b2A" kind="show" identifier="ShowUserDetails" id="if4-jQ-rjV"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Xeu-16-pf3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1604" y="386.35682158920542"/>
+        </scene>
+        <!--All Users-->
+        <scene sceneID="adp-qw-oiO">
+            <objects>
+                <viewController id="6tg-2F-Hea" customClass="AllUsersViewController" customModule="GitHubUsersList" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="lYx-yU-qWK">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Sad-KR-4VK">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="UserTableCell" rowHeight="112" id="Tei-wW-yiv" customClass="UserTableViewCell" customModule="GitHubUsersList" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="112"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Tei-wW-yiv" id="aTL-dN-d5q">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="111.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" tag="50" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="PlaceholderImage" translatesAutoresizingMaskIntoConstraints="NO" id="Gn1-QY-w26">
+                                                    <rect key="frame" x="8" y="15" width="80" height="80"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="80" id="Otx-HV-5Pg"/>
+                                                        <constraint firstAttribute="width" constant="80" id="wdB-Jz-hj2"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" tag="51" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Github Login" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.69999999999999996" translatesAutoresizingMaskIntoConstraints="NO" id="iKs-y0-SVZ">
+                                                    <rect key="frame" x="96" y="15" width="223" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="21" id="eRH-Nc-5dd"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" tag="52" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Github Page URL" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.69999999999999996" translatesAutoresizingMaskIntoConstraints="NO" id="0hI-at-qgM">
+                                                    <rect key="frame" x="96" y="47.5" width="223" height="16"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" tag="53" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Account Type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.69999999999999996" translatesAutoresizingMaskIntoConstraints="NO" id="Pfi-1s-Bug">
+                                                    <rect key="frame" x="96" y="74" width="190" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <button opaque="NO" tag="54" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xq6-77-zYz">
+                                                    <rect key="frame" x="327" y="35" width="40" height="40"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="40" id="GRV-mX-mev"/>
+                                                        <constraint firstAttribute="width" constant="40" id="QrE-LR-5dl"/>
+                                                    </constraints>
+                                                    <state key="normal" image="FavoriteIconUnselected"/>
+                                                    <state key="selected" image="FavoriteIconSelected"/>
+                                                    <connections>
+                                                        <action selector="handleButtonPressWithSender:" destination="Tei-wW-yiv" eventType="touchUpInside" id="xSi-aQ-53S"/>
+                                                    </connections>
+                                                </button>
+                                                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" tag="55" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Site Admin" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K2j-qV-mHt">
+                                                    <rect key="frame" x="325.5" y="18" width="42.5" height="15"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="15" id="Nam-yP-pfQ"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="8"/>
+                                                    <color key="textColor" red="0.23514227917181707" green="0.5" blue="0.18748499089799303" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="iKs-y0-SVZ" firstAttribute="leading" secondItem="Gn1-QY-w26" secondAttribute="trailing" constant="8" id="4qt-KZ-1Ih"/>
+                                                <constraint firstItem="Pfi-1s-Bug" firstAttribute="trailing" secondItem="0hI-at-qgM" secondAttribute="trailing" id="7DT-5K-3xQ"/>
+                                                <constraint firstItem="K2j-qV-mHt" firstAttribute="centerY" secondItem="iKs-y0-SVZ" secondAttribute="centerY" id="8Mu-Sm-UOJ"/>
+                                                <constraint firstItem="K2j-qV-mHt" firstAttribute="centerX" secondItem="xq6-77-zYz" secondAttribute="centerX" id="CbO-mg-2Nv"/>
+                                                <constraint firstItem="Pfi-1s-Bug" firstAttribute="bottom" secondItem="Gn1-QY-w26" secondAttribute="bottom" id="FFh-qU-7BE"/>
+                                                <constraint firstItem="Pfi-1s-Bug" firstAttribute="leading" secondItem="0hI-at-qgM" secondAttribute="leading" id="IuD-lF-Mtj"/>
+                                                <constraint firstItem="Gn1-QY-w26" firstAttribute="centerY" secondItem="aTL-dN-d5q" secondAttribute="centerY" id="R6u-0h-ckt"/>
+                                                <constraint firstItem="0hI-at-qgM" firstAttribute="trailing" secondItem="iKs-y0-SVZ" secondAttribute="trailing" id="TNm-hw-ogE"/>
+                                                <constraint firstItem="0hI-at-qgM" firstAttribute="leading" secondItem="iKs-y0-SVZ" secondAttribute="leading" id="UVJ-vz-c2Y"/>
+                                                <constraint firstItem="xq6-77-zYz" firstAttribute="trailing" secondItem="aTL-dN-d5q" secondAttribute="trailingMargin" id="cPl-TQ-gjY"/>
+                                                <constraint firstItem="0hI-at-qgM" firstAttribute="centerY" secondItem="aTL-dN-d5q" secondAttribute="centerY" id="dEk-CZ-5Wn"/>
+                                                <constraint firstItem="Gn1-QY-w26" firstAttribute="leading" secondItem="aTL-dN-d5q" secondAttribute="leadingMargin" id="gpI-pV-ukc"/>
+                                                <constraint firstItem="iKs-y0-SVZ" firstAttribute="top" secondItem="Gn1-QY-w26" secondAttribute="top" id="m4Q-4X-nTC"/>
+                                                <constraint firstItem="xq6-77-zYz" firstAttribute="centerY" secondItem="aTL-dN-d5q" secondAttribute="centerY" id="tFS-M0-vO8"/>
+                                                <constraint firstItem="xq6-77-zYz" firstAttribute="leading" secondItem="iKs-y0-SVZ" secondAttribute="trailing" constant="8" id="uag-e0-5vv"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="accountTypeLabel" destination="Pfi-1s-Bug" id="fTY-M4-7WP"/>
+                                            <outlet property="avatarImageView" destination="Gn1-QY-w26" id="Zm6-b8-wSL"/>
+                                            <outlet property="favoriteButton" destination="xq6-77-zYz" id="mk2-bW-o60"/>
+                                            <outlet property="githubPageURLLabel" destination="0hI-at-qgM" id="s9q-T9-c1t"/>
+                                            <outlet property="loginLabel" destination="iKs-y0-SVZ" id="V0J-Dm-k9Q"/>
+                                            <outlet property="siteAdminLabel" destination="K2j-qV-mHt" id="Ezt-gi-7lO"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="6tg-2F-Hea" id="dlN-J4-Fe3"/>
+                                    <outlet property="delegate" destination="6tg-2F-Hea" id="M2f-B2-0dP"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Sad-KR-4VK" firstAttribute="top" secondItem="lYx-yU-qWK" secondAttribute="top" id="Otc-Qh-u9o"/>
+                            <constraint firstItem="Sad-KR-4VK" firstAttribute="bottom" secondItem="wes-cX-rg5" secondAttribute="bottom" id="Vj5-CT-414"/>
+                            <constraint firstItem="Sad-KR-4VK" firstAttribute="trailing" secondItem="wes-cX-rg5" secondAttribute="trailing" id="mWg-RF-Iyw"/>
+                            <constraint firstItem="Sad-KR-4VK" firstAttribute="leading" secondItem="wes-cX-rg5" secondAttribute="leading" id="tT0-Gb-7XS"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="wes-cX-rg5"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" systemItem="contacts" id="rlV-bb-GZB"/>
+                    <navigationItem key="navigationItem" title="All Users" id="gh6-sF-I3C"/>
+                    <connections>
+                        <outlet property="allUsersTableView" destination="Sad-KR-4VK" id="hdO-WP-bc3"/>
+                        <segue destination="1bp-tE-b2A" kind="show" identifier="ShowUserDetails" id="dr2-7i-ljP"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MJP-6d-zZ7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1604" y="-280"/>
+        </scene>
+        <!--User Git Hub Details View Controller-->
+        <scene sceneID="fUy-kI-vSh">
+            <objects>
+                <viewController id="1bp-tE-b2A" customClass="UserGitHubDetailsViewController" customModule="GitHubUsersList" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="RRl-uN-aCa">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UHU-W7-8n7">
+                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <outlet property="delegate" destination="1bp-tE-b2A" id="LCc-oz-LE3"/>
+                                </connections>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="UHU-W7-8n7" firstAttribute="bottom" secondItem="quQ-Ut-PQi" secondAttribute="bottom" id="18H-Tc-dDN"/>
+                            <constraint firstItem="UHU-W7-8n7" firstAttribute="trailing" secondItem="quQ-Ut-PQi" secondAttribute="trailing" id="VdA-H8-WBO"/>
+                            <constraint firstItem="UHU-W7-8n7" firstAttribute="top" secondItem="quQ-Ut-PQi" secondAttribute="top" id="Zdy-Wz-XEA"/>
+                            <constraint firstItem="UHU-W7-8n7" firstAttribute="leading" secondItem="quQ-Ut-PQi" secondAttribute="leading" id="t0e-8x-CPw"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="quQ-Ut-PQi"/>
+                    </view>
+                    <connections>
+                        <outlet property="userGithubWebView" destination="UHU-W7-8n7" id="78n-9s-Uyr"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qVa-qg-0Sg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2556" y="-260"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="jIG-6J-dCo">
+            <objects>
+                <navigationController id="jCX-41-cYN" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" systemItem="contacts" id="I7K-b9-chs"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="dJb-qc-8gZ">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="6tg-2F-Hea" kind="relationship" relationship="rootViewController" id="v9H-yW-1gF"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hAL-FS-2tk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="849" y="-280"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="ZPo-ed-KJp">
+            <objects>
+                <tabBarController id="F6r-yc-X08" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="iB6-pN-bAP">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="jCX-41-cYN" kind="relationship" relationship="viewControllers" id="bAh-B3-8sz"/>
+                        <segue destination="fPF-Pl-SNi" kind="relationship" relationship="viewControllers" id="34W-C5-BpZ"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="b8P-un-G70" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-102" y="108"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="FavoriteIconSelected" width="717" height="682"/>
+        <image name="FavoriteIconUnselected" width="717" height="682"/>
+        <image name="PlaceholderImage" width="256" height="256"/>
+    </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="if4-jQ-rjV"/>
+    </inferredMetricsTieBreakers>
+</document>
